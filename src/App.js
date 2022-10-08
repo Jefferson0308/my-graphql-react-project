@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import ExchangeRatesPage from './ExchangeRatesPage'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { client } from './client'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>CURRENCIES</h1>
+      <ApolloProvider client={client}>
+        <ExchangeRatesPage />
+      </ApolloProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
